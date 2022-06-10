@@ -10,20 +10,10 @@ class ListsController < ApplicationController
     redirect_to '/top'
   end
   
-  def index
-  end
-
-  def show
-  end
-
-  def edit
-  end
   
   
   private 
-  #priveteより下に書くことでメソッドに制限をかけることができる
- 
-  def list_params　　#privateメソッドの名前は、「モデル名_params」とすることが多い
+  def list_params　
     params.require(:list).permit(:title, :body)
   end
 end
